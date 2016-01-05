@@ -1,0 +1,22 @@
+.ion-movie-poster { 
+    padding: 15px;
+    /*height: 600px;*/
+    border: solid 1px #EFEFEF;
+    margin: 20px 2px;
+} 
+
+/*.ion-movie-poster-container {
+    border: solid 2px #EFEFEF;
+}
+*/
+a:hover .ion-movie-poster {
+ border: solid 1px #CCC;
+ -moz-box-shadow: 1px 1px 5px #999;
+ -webkit-box-shadow: 1px 1px 5px #999;
+ box-shadow: 1px 1px 5px #999; 
+}
+
+.ion-movie-poster { 
+    padding: 15px;
+    margin: 10px 0;
+} 

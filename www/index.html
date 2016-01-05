@@ -5,9 +5,9 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">     
     <title>Ionic IMDB Movie Search</title> 
     
-    <script src="http://code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
-	<link href="http://code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
-	<link href="css/app.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+	<link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
     
 </head>
 
@@ -15,26 +15,26 @@
     <ion-content scroll="false">
     <div class="row">
      <div class="col text-center">
-      <img class="" ng-src="img/logo_b.png">
-  </div>
+         <img class="" ng-src="img/logo_b.png" />
+     </div>
+ </div>
+
+ <div class="row">
+    <div id="search-box" class="bar bar-header item-input-inset">
+       <div class="item-input-wrapper">
+         <i class="icon ion-search placeholder-icon"></i>
+         <input type="text" placeholder="Search movie on IMDB" ng-model="moviesearch.query" ng-change="searchMovie()">
+     </div>
+     <button class="button button-small" ng-click="clearSearch()">
+       Cancel
+   </button>
+</div>
 </div>
 
-
-<div id="search-box" class="bar bar-header item-input-inset">
-    <div class="item-input-wrapper">
-      <i class="icon ion-search placeholder-icon"></i>
-      <input type="text" placeholder="Search movie on IMDB" ng-model="moviesearch.query" ng-change="searchMovie()">
-  </div>
-  <button class="button button-small" ng-click="clearSearch()">
-    Cancel
-</button>
-</div>
-
-</div>
 <div ng-if="moviesearch.found">
     <div class = "row">
-       <movie-entry details="moviesearch.details"></movie-entry>
-   </div>
+     <movie-entry ng-repeat="movies in moviesearch.entries|limitTo:4" details="movies"></movie-entry>
+ </div>
 </div>
 </ion-content>
 </body>
