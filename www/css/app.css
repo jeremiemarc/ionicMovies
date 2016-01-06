@@ -20,3 +20,13 @@ a:hover .ion-movie-poster {
     padding: 15px;
     margin: 10px 0;
 } 
+
+
+.ion-movie-poster img {
+    max-height:100%;
+    max-width:100%;
+    position: relative;
+    margin: 0 auto;  
+    left: 0;
+    right: 0;  
+}
